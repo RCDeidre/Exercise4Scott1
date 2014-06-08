@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise4Scott1", "Exercise4Scott1\Exercise4Scott1.csproj", "{9A38D4FA-1624-47A1-B70E-87D52DB02EC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{08ABC3FF-BC00-43C3-9863-9C0FA6D78C29}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\ExerciseForScott1\dbExerciseForScott1.sql = ..\..\..\..\..\..\ExerciseForScott1\dbExerciseForScott1.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_Project", "DAL_Project\DAL_Project.csproj", "{E59E5E10-BE6C-4D11-B78F-7EC077184218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A38D4FA-1624-47A1-B70E-87D52DB02EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A38D4FA-1624-47A1-B70E-87D52DB02EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A38D4FA-1624-47A1-B70E-87D52DB02EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A38D4FA-1624-47A1-B70E-87D52DB02EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59E5E10-BE6C-4D11-B78F-7EC077184218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59E5E10-BE6C-4D11-B78F-7EC077184218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59E5E10-BE6C-4D11-B78F-7EC077184218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59E5E10-BE6C-4D11-B78F-7EC077184218}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

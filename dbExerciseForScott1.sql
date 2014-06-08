@@ -1,6 +1,6 @@
 /*****************Start the MASTER DATABASE ****************************************/
-USE master
-GO
+--USE master
+--GO
 /*****Runs only after the the Database has been run the first time******************/
 DROP DATABASE dbExerciseForScott1
 USE master
@@ -55,16 +55,17 @@ GO
 /*************************STORED PROCEDURES*****************************************
 ***********************************************************************************/
 
-
-
-/****************************GROUP: MISC(1)*****************************************
+/****************************GROUP: LOGIN(3)*****************************
 ************************************************************************************
 **      File: dbExerciseForScott1
-**      Desc: spSigningIn - Signing in to Site Regular
+**      Desc: spLogin
+**			  spLoginSelect - Select all Login
+**			  spLoginDelete - Deleting Login Records
 **      Auth: Deidre Steenman
 **      Date: 2014
-***********************************************************************************/
-CREATE PROCEDURE spSigningIn 
+************************************************************************************/
+
+CREATE PROCEDURE spLogin
 (
 @UserName VARCHAR(15), 
 @Password VARCHAR(8)
@@ -84,22 +85,15 @@ BEGIN TRANSACTION
 		ROLLBACK TRANSACTION
 GO
 /* TEST */
---spSignIn @UserName = Scott, @Password = 1234
+--spLogin @UserName = Scott, @Password = 1234
 --GO
 --Select * FROM tbLogin
 GO
+/**********************************************************************************/
 
 
 
 
-/****************************GROUP: LOGIN(2)*****************************
-************************************************************************************
-**      File: dbExerciseForScott1
-**      Desc: spLoginSelect - Select all Login
-**			  spLoginDelete - Deleting Login Records
-**      Auth: Deidre Steenman
-**      Date: 2014
-************************************************************************************/
 CREATE PROCEDURE spLoginSelect
 AS
 BEGIN
@@ -108,6 +102,25 @@ END
 /* TEST Works*/
 --spLoginSelect
 GO
+/**********************************************************************************/
+--CREATE PROCEDURE spLoginSelect
+--( 
+--@LoginID INT = NULL
+--)
+--AS
+--BEGIN
+--		--IF EXISTS(SELECT UserName FROM tbUsers WHERE UserName = @UserName AND UserPassword = @Password AND SecurityLevel = '2')
+--		SELECT * FROM tbLogin
+--        WHERE LoginID = ISNULL(@LoginID,LoginID)			
+--END
+
+--/* TEST Works*/
+----spLoginSelect will not work without UserName and Password
+----GO
+----spLoginSelect @UserName = Scott, @Password = 2345
+--GO
+
+
 /**********************************************************************************/
 CREATE PROCEDURE spLoginDelete
 (
@@ -134,106 +147,6 @@ END
 --GO
 --Select * from tbLogin
 GO
-
-
-
-
-
-/*************************GROUP: USERS(4)*************************************
-************************************************************************************
-**      File: dbExerciseForScott1
-**      Desc: spUserUpdate - Update a Users Record
-**			  spUserSelect - Selects all Users
-**			  spUserDelete - Deletes a User
-**			  spUserPasswordUpdate - Update a Users Password
-**			  Auth: Deidre Steenman
-**      Date: 2014
-***********************************************************************************/
-CREATE PROCEDURE spUserUpdate
-(
-@UserID INT = NULL,
-@UserName VARCHAR(15)= NULL,
-@Password VARCHAR(8)= NULL,
-@AccessLevel VARCHAR(5)= NULL
-)
-AS
-BEGIN
-BEGIN TRANSACTION
-		BEGIN
-			UPDATE tbUsers
-			SET UserName = ISNULL(@UserName,UserName),
-				Password = ISNULL(@Password,Password),
-				AccessLevel = ISNULL(@AccessLevel,AccessLevel)
-				
-			WHERE UserID = @UserID
-		END
-				
-		IF @@ERROR = 0
-			COMMIT TRANSACTION
-		ELSE
-			ROLLBACK TRANSACTION
-END	
---/*TEST WORKS*/
---spUserAddUpdate @UserID = 1, @UserName = "Karol"
-GO
-/***********************************************************************************/
-CREATE PROCEDURE spUserSelect
-AS
-BEGIN
-	SELECT * FROM tbUsers
-END
-/*TEST Works*/
---spUserSelect
-GO
-/***********************************************************************************/
-CREATE PROCEDURE spUserDelete
-(
-@UserID INT 
-)
-AS
-BEGIN
-BEGIN TRANSACTION
-			BEGIN
-				DELETE FROM tbUsers WHERE UserID = @UserID 
-				
-			END
-
-		IF @@ERROR = 0
-			COMMIT TRANSACTION
-		ELSE
-			ROLLBACK TRANSACTION
-END	
-GO
-/***********************************************************************************/
-CREATE PROCEDURE spUserPasswordUpdate
-(
-@UserName VARCHAR(15),
-@Password VARCHAR(8),
-@NewPassword VARCHAR(8)
-)
-AS
-BEGIN
-BEGIN TRANSACTION
-		IF EXISTS(SELECT * FROM tbUsers WHERE UserName = @UserName AND Password = @Password)
-		BEGIN
-		UPDATE tbUsers
-		SET Password = @NewPassword
-		WHERE UserName = @UserName
-		AND Password = @Password
-		END
-				
-		IF @@ERROR = 0
-			COMMIT TRANSACTION
-		ELSE
-			ROLLBACK TRANSACTION
-		
-END	
---/*TEST Works*/
---spUserPasswordUpdate @UserName = Scott, @Password = 1234, @NewPassword = 9876
---GO
---Select * from tbUsers
-GO
-/***********************************************************************************/
 
 
 Select *  from tbUsers

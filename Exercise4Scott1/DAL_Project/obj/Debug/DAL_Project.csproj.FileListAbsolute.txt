@@ -1,0 +1,5 @@
+C:\ExerciseForScott1\Exercise4Scott1\DAL_Project\bin\Debug\DAL_Project.dll
+C:\ExerciseForScott1\Exercise4Scott1\DAL_Project\bin\Debug\DAL_Project.pdb
+C:\ExerciseForScott1\Exercise4Scott1\DAL_Project\obj\Debug\DAL_Project.csprojResolveAssemblyReference.cache
+C:\ExerciseForScott1\Exercise4Scott1\DAL_Project\obj\Debug\DAL_Project.dll
+C:\ExerciseForScott1\Exercise4Scott1\DAL_Project\obj\Debug\DAL_Project.pdb

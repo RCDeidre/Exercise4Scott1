@@ -1,0 +1,48 @@
+﻿body {
+    background:lightyellow;
+    color:blue;
+    text-align:center;
+    font-family: arial;
+   
+}
+#pnlSignedIn
+{
+ margin:auto;
+}
+#footer
+{
+    margin:auto;
+    color:blue;
+    font-size: 90%;
+    padding: 0px;
+}
+
+navigation
+{
+ clear:both;
+}
+
+.nav {
+    margin:auto;
+    display: inline-block;
+  	padding: 0px;
+	list-style: none;
+    height: 150px;
+}
+
+.nav li {
+   	float: left;
+	width:auto;
+    margin: 5px 0;
+	position: relative;
+    top: 10px;
+        }
+.nav li a {
+	background:#FFFFCC;
+	color: blue;
+	display: block;
+	padding: 7px 8px;
+	text-decoration: none;
+    width: 204px;
+}
+

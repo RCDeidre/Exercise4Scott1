@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMaster.master.cs" Inherits="Exercise4Scott1.MyMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder></title>
+    <link href="MyStyle.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div> 
+        <br /><br /><asp:Label ID="lblNotSignedIn" runat="server" ></asp:Label><asp:Label ID="lblYouAre" runat="server" ></asp:Label>
+    <br /><br />
+    </div>
+     
+      <div class="navigation">
+          <div class="nav">
+  				
+                     <a href="AdminPage.aspx"><asp:Label ID="lbnAdmin" runat="server" Text="Admin"></asp:Label></a>&nbsp&nbsp 
+                     <a href="UserPage.aspx"><asp:Label ID="lbnUser" runat="server" Text="Users"></asp:Label></a>
+                 
+  		  </div> 
+      </div>
+          <br />
+        <asp:Panel ID="pnlSignedIn" runat="server" Width="327px">User Name
+                        <asp:TextBox ID="txtUserName" runat="server" Width="98px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvUserName" runat="server" 
+                                ControlToValidate="txtUserName" ErrorMessage="" ForeColor="Red"><br />User Name does not match!</asp:RequiredFieldValidator>
+                        <br />
+                        Password
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="105px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" 
+                                ControlToValidate="txtPassword" ErrorMessage="" ForeColor="Red"><br />Password does not match!</asp:RequiredFieldValidator>
+                        <br />
+            
+                        
+                        <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" /><br />
+                             
+            <asp:Label ID="lblErrorSignIn" runat="server" text=""></asp:Label>
+            <br />
+        <asp:CheckBox ID="chxStaySignedIn" runat="server" Text=" Remember Me!" />
+        </asp:Panel>
+
+
+        <asp:Panel ID="pnlSignedOut" runat="server">
+                <asp:Button ID="btnSignOut" runat="server" Text="Sign Out" OnClick="btnSignOut_Click" />
+        </asp:Panel>
+        
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      
+        </asp:ContentPlaceHolder>
+            
+              
+        <br /> <br /><br /> <br />
+      <%--FOOTER START--%>
+      <div id="footer">Copyright &copy; 2014 The Art Farm | Deidre Steenman </div>
+  
+   
+    </form>
+</body>
+</html>

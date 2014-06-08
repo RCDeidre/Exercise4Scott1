@@ -1,0 +1,12 @@
+c:\users\student\documents\visual studio 2012\Projects\Exercise4Scott1\Exercise4Scott1\bin\Exercise4Scott1.dll
+c:\users\student\documents\visual studio 2012\Projects\Exercise4Scott1\Exercise4Scott1\bin\Exercise4Scott1.pdb
+c:\users\student\documents\visual studio 2012\Projects\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.csprojResolveAssemblyReference.cache
+c:\users\student\documents\visual studio 2012\Projects\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.dll
+c:\users\student\documents\visual studio 2012\Projects\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.pdb
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\bin\Exercise4Scott1.dll
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\bin\Exercise4Scott1.pdb
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\bin\DAL_Project.dll
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\bin\DAL_Project.pdb
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.csprojResolveAssemblyReference.cache
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.dll
+C:\ExerciseForScott1\Exercise4Scott1\Exercise4Scott1\obj\Debug\Exercise4Scott1.pdb
