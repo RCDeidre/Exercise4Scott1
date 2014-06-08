@@ -90,10 +90,6 @@ GO
 --Select * FROM tbLogin
 GO
 /**********************************************************************************/
-
-
-
-
 CREATE PROCEDURE spLoginSelect
 AS
 BEGIN
@@ -102,23 +98,6 @@ END
 /* TEST Works*/
 --spLoginSelect
 GO
-/**********************************************************************************/
---CREATE PROCEDURE spLoginSelect
---( 
---@LoginID INT = NULL
---)
---AS
---BEGIN
---		--IF EXISTS(SELECT UserName FROM tbUsers WHERE UserName = @UserName AND UserPassword = @Password AND SecurityLevel = '2')
---		SELECT * FROM tbLogin
---        WHERE LoginID = ISNULL(@LoginID,LoginID)			
---END
-
---/* TEST Works*/
-----spLoginSelect will not work without UserName and Password
-----GO
-----spLoginSelect @UserName = Scott, @Password = 2345
---GO
 
 
 /**********************************************************************************/
